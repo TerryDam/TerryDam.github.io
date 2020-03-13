@@ -19,8 +19,8 @@
     // }
     // window.alert(sum(3,5));
     function reduce(array, combine, start) {
-    let current = start;
-    for (let element of array) {
+    var current = start;
+    for (var element of array) {
         current = combine(current, element);
     }
     return current;
@@ -35,11 +35,12 @@
     // console.log(reduce([1, 2, 3, 4], function(a, b){return a+b;}, 1));
     console.log(
         reduce(
-        data.map(function(people){
-            var a=people.credit;
-            return a;
-        }),
-        function(a, b){return a+b;}
+            data,
+        // data.map(function(people){
+        //     var a=people.credit;
+        //     return a;
+        // }),
+        function(a,b){return a+b.credit;}
         , 0));
 </script>
 
