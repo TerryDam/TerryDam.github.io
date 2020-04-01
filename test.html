@@ -3,63 +3,21 @@
     <script src="stat.js"></script>
     <script src="Underscore.js"></script>
 <script>
-    function fn(){
-    var max=10;
-    return function bar(x){
-        if(x>max){
-            console.log(x);
-        }
-    };
-}
+    var value=11;
+    var initvalue=22;
+    var sum=0;
 
-var f1=fn(),max=100;
-f1(15);
-
-
-/*
-var a=10
-
-function fn(){
-    var b=20;
-    function bar(){
-        console.log(a+b);
+    function additon(){
+        var value=initvalue;
+        return function add(x) {
+            value=value+x;
+            sum=value;
+        };
     }
-    return bar;
-    
-}
-
-var x=fn(),b=200;
-x();
-
-
-
-    var x=10;
-
-function fn(){
-    console.log(x);
-}
-
-function show(f){
-    var x=20;
-    (function(){
-        f();
-    })();
-}
-show(fn);
-
-
-
-    var a=10,b=20;
-    function fn(){
-        var a=100,c=300;
-        function bar(){
-            var a=1000,d=4000;
-        }
-        bar(100);
-        bar(200);
-    }
-    fn(10);
-*/
+    var func=additon();
+    func(33);
+    func(44);
+    console.log(sum);
 </script>
 </body>
 </html>
